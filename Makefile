@@ -1,28 +1,34 @@
+# executables
+NAME_SERVER = server
+NAME_CLIENT = client
+
+# compiler and flags
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+
+# sources
 SRC_SERVER = server.c
 SRC_CLIENT = client.c
 
-OBJS_SERVER = $(SRC_SERVER:.c=.o)
-OBJS_CLIENT = $(SRC_CLIENT:.c=.o)
+# objects
+OBJ_SERVER = $(SRC_SERVER:.c=.o)
+OBJ_CLIENT = $(SRC_CLIENT:.c=.o)
 
-FLAGS = -Wall -Wextra -Werror
-LIBFT = libft/libft.a
+# rules
+all: $(NAME_SERVER) $(NAME_CLIENT)
 
-all: server client
+$(NAME_SERVER): $(OBJ_SERVER)
+	$(CC) $(CFLAGS) $(OBJ_SERVER) -o $(NAME_SERVER)
 
-server: $(OBJS_SERVER) $(LIBFT)
-	cc $(FLAGS) $(OBJS_SERVER) -o server -Llibft -lft
-
-client: $(OBJS_CLIENT) $(LIBFT)
-	cc $(FLAGS) $(OBJS_CLIENT) -o client -Llibft -lft
-
-$(LIBFT):
-	make -C libft
+$(NAME_CLIENT): $(OBJ_CLIENT)
+	$(CC) $(CFLAGS) $(OBJ_CLIENT) -o $(NAME_CLIENT)
 
 clean:
-	rm -f $(OBJS_SERVER) $(OBJS_CLIENT)
-	make -C libft clean
+	rm -f $(OBJS_SERVER) $(OBJ_CLIENT)
 
 fclean: clean
-	rm -f server client libft/libft.a
+	rm -f $(NAME_SERVER) $(NAME_CLIENT)
 
 re: fclean all
+
+.PHONY: all clean fclean re
