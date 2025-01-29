@@ -6,7 +6,14 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 10:20:44 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/20 10:20:45 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/01/22 11:10:30 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "talk.h"
+
+int main(int argc, char *argv[])
+{
+	
+	return (0);
+}
