@@ -2,7 +2,7 @@
 NAME_SERVER = server
 NAME_CLIENT = client
 
-# compiler and Flags
+# compiler and flags
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
