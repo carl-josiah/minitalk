@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 16:46:36 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/29 16:58:33 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/01/29 17:24:03 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,8 @@ void	ft_putnbr(int n)
 	}
 	if (n >= 10)
 	{
-		ft_putnbr_fd(n / 10);
-		ft_putnbr_fd(n % 10);
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
 	}
 	else
 		ft_putchar(n + '0');

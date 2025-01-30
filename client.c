@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 16:45:54 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/29 16:46:21 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/01/29 17:24:18 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	main(int argc, char *argv[])
 {
+	(void) argc;
+	(void) argv;
 	return (0);
 }
