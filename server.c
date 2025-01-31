@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 10:20:49 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/30 09:29:51 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/01/31 18:37:36 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,31 @@
 
 void	handler(int sig)
 {
-	printf("Can't\n");
+	// static int	bit_position;
+	// static char	current_char;
+
+	// if (sig == SIGUSR1)
+	// 	current_char = current_char | (1 << bit_position);
+	// bit_position++;
+	// if (bit_position == 8)
+	// {
+	// 	if (current_char == '\0')
+	// 		ft_putchar('\n');
+	// 	ft_putchar(current_char);
+	// 	current_char = 0;
+	// 	bit_position = 0;
+	// }
+	if (sig == SIGUSR1)
+		ft_putstr("hi");
 }
 
 int	main(void)
 {
-	struct sigaction	sa;
-
-	sa.sa_handler = &handler;
+	ft_putstr("The PID: ");
 	ft_putnbr(getpid());
-	write(1, "\n", 1);
+	ft_putchar('\n');
+	signal(SIGUSR1, handler);
+	signal(SIGUSR2, handler);
 	while (1)
 		pause();
 	return (0);

@@ -4,7 +4,7 @@ NAME_CLIENT = client
 
 # compiler and flags
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror
 
 # sources
 SRC_SERVER = server.c
@@ -20,10 +20,12 @@ OBJ_UTILS  = $(SRC_UTILS:.c=.o)
 all: $(NAME_SERVER) $(NAME_CLIENT)
 
 $(NAME_SERVER): $(OBJ_SERVER) $(OBJ_UTILS)
-	$(CC) $(CFLAGS) $(OBJ_SERVER) $(OBJ_UTILS) -o $(NAME_SERVER)
+	$(CC)  $(OBJ_SERVER) $(OBJ_UTILS) -o $(NAME_SERVER)
+# $(CFLAGS)
 
 $(NAME_CLIENT): $(OBJ_CLIENT) $(OBJ_UTILS)
-	$(CC) $(CFLAGS) $(OBJ_CLIENT) $(OBJ_UTILS) -o $(NAME_CLIENT)
+	$(CC)  $(OBJ_CLIENT) $(OBJ_UTILS) -o $(NAME_CLIENT)
+# $(CFLAGS)
 
 clean:
 	rm -f $(OBJ_SERVER) $(OBJ_CLIENT) $(OBJ_UTILS)
