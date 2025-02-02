@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 16:45:54 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/31 18:39:33 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/02/02 11:54:59 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,28 @@ static void	send_message(int pid, char *message)
 {
 	int	i;
 	int	bit_position;
-	int	bit;
 
 	i = 0;
-	bit_position = 0;
-	bit = 0;
 	while (message[i])
 	{
-		if (((message[i] >> bit_position) & 1) == 1)
+		bit_position = 0;
+		while (bit_position < 8)
 		{
-			ft_putstr("nice msg");
+			if (((message[i] >> bit_position) & 1) == 1)
+				kill(pid, SIGUSR1);
+			else
+				kill(pid, SIGUSR2);
+			usleep(200);
+			bit_position++;
 		}
-		else
-			ft_putstr("bad msg");
 		i++;
+	}
+	bit_position = 0;
+	while (bit_position < 8)
+	{
+		kill(pid, SIGUSR2);
+		usleep(200);
 		bit_position++;
-		if (bit_position == 7)
-			break ;
 	}
 }
 
