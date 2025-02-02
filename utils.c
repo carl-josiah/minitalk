@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 16:46:36 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/29 17:24:03 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/02/02 12:00:59 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,14 +70,4 @@ void	ft_putstr(char *str)
 {
 	while (*str)
 		write(1, str++, 1);
-}
-
-size_t	ft_strlen(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
 }
