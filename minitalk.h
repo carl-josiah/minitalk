@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 08:37:40 by ccastro           #+#    #+#             */
-/*   Updated: 2025/01/29 17:27:12 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/02/02 12:18:07 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@ int		ft_atoi(const char *str);
 void	ft_putnbr(int n);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
-size_t	ft_strlen(char *str);
 
 #endif
