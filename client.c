@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 16:45:54 by ccastro           #+#    #+#             */
-/*   Updated: 2025/02/02 12:02:48 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/02/02 14:51:01 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	main(int ac, char *av[])
 	}
 	else
 	{
-		ft_putstr("Usage: ./client <server_pid> <message>\n");
+		ft_putstr("Correct usage: ./client <server_pid> <message>\n");
 		exit(1);
 	}
 	return (0);
