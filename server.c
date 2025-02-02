@@ -6,7 +6,7 @@
 /*   By: ccastro <ccastro@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 10:20:49 by ccastro           #+#    #+#             */
-/*   Updated: 2025/02/02 12:00:01 by ccastro          ###   ########.fr       */
+/*   Updated: 2025/02/02 14:02:57 by ccastro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	handler(int sig)
 	bit_position++;
 	if (bit_position == 8)
 	{
-		ft_putchar(current_char);
+		if (current_char == '\0')
+			ft_putchar('\n');
+		else
+			ft_putchar(current_char);
 		bit_position = 0;
 		current_char = 0;
 	}
